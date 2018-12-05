@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 9, 2018 11:48:26 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="cn.zyf.sshwebeasyui.model.Permission" table="sbeu_permissions">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="resources" type="java.lang.String">
+            <column name="resources" />
+        </property>
+        <property name="state" type="java.lang.Integer">
+            <column name="state" />
+        </property>
+    </class>
+</hibernate-mapping>

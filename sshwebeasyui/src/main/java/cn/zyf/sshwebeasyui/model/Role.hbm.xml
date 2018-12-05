@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 9, 2018 9:43:07 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="cn.zyf.sshwebeasyui.model.Role" table="sbeu_roles">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="roleName" type="java.lang.String">
+            <column name="role_name" />
+        </property>
+        <property name="state" type="java.lang.Integer">
+            <column name="state" />
+        </property>
+        <!-- lazy="false"否则报错 -->
+        <set name="permissions" table="sbeu_user_permissions" lazy="false">
+        	<key>
+        		<column name="role_id"></column>
+        	</key>
+        	<!-- column="permissions_id"外键 -->
+        	<many-to-many class="cn.zyf.sshwebeasyui.model.Permission" column="permissions_id"></many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
